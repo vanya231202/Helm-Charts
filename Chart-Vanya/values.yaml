@@ -1,0 +1,6 @@
+# Default Values for my Helm Chart
+
+container:
+  image: ivan231202/k8s-php-2:latest
+
+replicaCount: 2

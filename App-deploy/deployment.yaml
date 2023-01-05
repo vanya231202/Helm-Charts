@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels:
+    app : my-k8s-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: zsu
+  template:  
+    metadata:
+      labels:
+        project: zsu
+    spec:
+      containers:
+        - name : zsu-web
+          image: ivan231202/k8s-php-2:latest
+          ports: 
+            - containerPort: 80
